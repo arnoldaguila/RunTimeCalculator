@@ -18,7 +18,7 @@ public class SortingAlgorithms {
 
     /**
      * sortingPrint()
-     * This static method prints
+     * This static method prints the Run time of the sorting algorithms.
      * @param array
      */
     public static void sortingPrint(int[] array){
@@ -40,6 +40,12 @@ public class SortingAlgorithms {
 
     }
 
+    /**
+     * randomIntArray()
+     * This method generates a random int array.
+     * @param userInput
+     * @return
+     */
     public static int[] randomIntArray(int userInput){
         // creating a random array
         int[] randomArray = new int[userInput];
@@ -51,6 +57,11 @@ public class SortingAlgorithms {
         return randomArray;
     }//randomIntArray
 
+    /**
+     * selectionSort()
+     * This is the selection sort algorithm
+     * @param array
+     */
     public static void selectionSort(int[] array){
         // first pointer
         for(int i = 0; i < array.length; i++){
@@ -68,6 +79,11 @@ public class SortingAlgorithms {
         }//for
     }//selectionSort
 
+    /**
+     * insertionSort()
+     * This is the insertion sort algorithm
+     * @param array
+     */
     public static void insertionSort(int[] array){
         for(int i = 0; i < array.length; i++){
             int j = i;
@@ -82,14 +98,29 @@ public class SortingAlgorithms {
 
     }//insertionSort
 
+    /**
+     * shellSort()
+     * This is the shell sort algorithm
+     * @param array
+     */
     public static void shellSort(int[] array){
 
     }//shellSort
 
+    /**
+     * quickSort()
+     * This is the quicksort algorithms
+     * @param array
+     */
     public static void quickSort(int[] array){
 
     }//quickSort
 
+    /**
+     * mergeSort()
+     * This is the merge sort algorithm.
+     * @param array
+     */
     public static void mergeSort(int[] array){
 
     }//mergeSort
