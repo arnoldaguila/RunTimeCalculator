@@ -11,6 +11,7 @@ public class SortingAlgorithms {
         // calling randomIntArray static method to generate a random array.
         int[] randomIntArray = randomIntArray(x);
 
+        //THIS IS THE UNORDERED LIST
         System.out.println(Arrays.toString(randomIntArray));
         sortingPrint(randomIntArray);
 
@@ -47,7 +48,11 @@ public class SortingAlgorithms {
         duration = endTime - startTime;
         second = duration / 1000000000;
         millisecond = duration / 1000000;
+
+        //THIS IS THE ORDERED LIST
         System.out.println(Arrays.toString(array));
+        // ^- IS THE ORDERED LIST
+
         System.out.println("Insertion Insertion's Run Time: ");
         System.out.println("Run time: " + second + " seconds");
         System.out.println("Run time: " + millisecond + " milliseconds");
