@@ -22,20 +22,41 @@ public class SortingAlgorithms {
      * @param array
      */
     public static void sortingPrint(int[] array){
-        long startTime = System.nanoTime();
+        long startTime;
+        long endTime;
+        long duration;
+        long second;
+        long millisecond;
+
+        //SELECTION SORT
+//        startTime = System.nanoTime();
 //        selectionSort(array);
+//        endTime = System.nanoTime();
+//        duration = endTime - startTime;
+//        second = duration / 1000000000;
+//        millisecond = duration / 1000000;
+//        System.out.println("Insertion Sort's Run Time: ");
+//        System.out.println("Run time: " + second + " seconds");
+//        System.out.println("Run time: " + millisecond + " milliseconds");
+//        System.out.println("Run time: " + duration + " nanoseconds");
+
+        //INSERTION SORT
+        startTime = System.nanoTime();
         insertionSort(array);
+        endTime = System.nanoTime();
+        duration = endTime - startTime;
+        second = duration / 1000000000;
+        millisecond = duration / 1000000;
         System.out.println(Arrays.toString(array));
-        long endTime = System.nanoTime();
-        long duration = endTime - startTime;
-        //duration is in milliseconds
-        long second = duration / 1000000000;
-        long millisecond = duration / 1000000;
-//        System.out.println("Selection Sort's Run Time: ");
-        System.out.println("Insertion Sort's Run Time: ");
+        System.out.println("Insertion Insertion's Run Time: ");
         System.out.println("Run time: " + second + " seconds");
         System.out.println("Run time: " + millisecond + " milliseconds");
         System.out.println("Run time: " + duration + " nanoseconds");
+
+
+        //duration is in milliseconds
+
+//        System.out.println("Selection Sort's Run Time: ");
 
 
     }
