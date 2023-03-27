@@ -23,9 +23,6 @@ public class SortingAlgorithms {
         long startTime;
         long endTime;
         long duration;
-        long second;
-        long millisecond;
-        long microsecond;
 
         // creating a new object to copy the original random array. CSCI221 knowledge lol.
         int[] selectionSortArray = new int[array.length];
@@ -48,78 +45,59 @@ public class SortingAlgorithms {
         selectionSort(selectionSortArray);
         endTime = System.nanoTime();
         duration = endTime - startTime;
-        second = duration / 1000000000;
-        millisecond = duration / 1000000;
-        microsecond = duration / 1000;
         System.out.println("Selection Sort's Run Time: ");
-        System.out.println("  Run time: " + second + " seconds");
-        System.out.println("  Run time: " + millisecond + " milliseconds");
-        System.out.println("  Run Time: " + microsecond + " microseconds");
-        System.out.println("  Run time: " + duration + " nanoseconds");
-        System.out.println();
+        timePrint(duration);
 
         //INSERTION SORT
         startTime = System.nanoTime();
         insertionSort(insertionSortArray);
         endTime = System.nanoTime();
         duration = endTime - startTime;
-        second = duration / 1000000000;
-        millisecond = duration / 1000000;
-        microsecond = duration / 1000;
         System.out.println("Insertion Sort's Run Time: ");
-        System.out.println("  Run time: " + second + " seconds");
-        System.out.println("  Run time: " + millisecond + " milliseconds");
-        System.out.println("  Run Time: " + microsecond + " microseconds");
-        System.out.println("  Run time: " + duration + " nanoseconds");
-        System.out.println();
+        timePrint(duration);
 
         //SHELL SORT
         startTime = System.nanoTime();
         shellSort(shellSortArray);
         endTime = System.nanoTime();
         duration = endTime - startTime;
-        second = duration / 1000000000;
-        millisecond = duration / 1000000;
-        microsecond = duration / 1000;
         System.out.println("Shell Sort's Run Time: ");
-        System.out.println("  Run time: " + second + " seconds");
-        System.out.println("  Run time: " + millisecond + " milliseconds");
-        System.out.println("  Run Time: " + microsecond + " microseconds");
-        System.out.println("  Run time: " + duration + " nanoseconds");
-        System.out.println();
+        timePrint(duration);
 
         //QUICK SORT
         startTime = System.nanoTime();
         quickSort(quickSortArray, 0, quickSortArray.length - 1);
         endTime = System.nanoTime();
         duration = endTime - startTime;
-        second = duration / 1000000000;
-        millisecond = duration / 1000000;
-        microsecond = duration / 1000;
         System.out.println("Quick Sort's Run Time: ");
-        System.out.println("  Run time: " + second + " seconds");
-        System.out.println("  Run time: " + millisecond + " milliseconds");
-        System.out.println("  Run Time: " + microsecond + " microseconds");
-        System.out.println("  Run time: " + duration + " nanoseconds");
-        System.out.println();
+        timePrint(duration);
 
         //MERGE SORT
         startTime = System.nanoTime();
         mergeSort(mergeSortArray, 0, mergeSortArray.length - 1);
         endTime = System.nanoTime();
         duration = endTime - startTime;
-        second = duration / 1000000000;
-        millisecond = duration / 1000000;
-        microsecond = duration / 1000;
         System.out.println("Merge Sort's Run Time: ");
+        timePrint(duration);
+
+
+    }
+
+    /**
+     * timePrint()
+     * This method prints out the run time in second, millisecond, microsecond, and nanosecond.
+     * @param duration
+     */
+    public static void timePrint(long duration){
+        long second = duration / 1000000000;
+        long millisecond = duration / 1000000;
+        long microsecond = duration / 1000;
         System.out.println("  Run time: " + second + " seconds");
         System.out.println("  Run time: " + millisecond + " milliseconds");
         System.out.println("  Run Time: " + microsecond + " microseconds");
         System.out.println("  Run time: " + duration + " nanoseconds");
         System.out.println();
-
-
-    }
+    }//timePrint()
 
     /**
      * randomIntArray()
