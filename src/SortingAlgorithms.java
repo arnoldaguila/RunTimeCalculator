@@ -16,8 +16,8 @@ public class SortingAlgorithms {
 
     /**
      * sortingPrint()
-     * This static method prints the Run time of the sorting algorithms.
-     * @param array
+     * This static method prints the Run time of the sorting algorithms. The parameter is int[].
+     * @param array int[]
      */
     public static void sortingPrint(int[] array){
         long startTime;
@@ -86,7 +86,7 @@ public class SortingAlgorithms {
     /**
      * timePrint()
      * This method prints out the run time in second, millisecond, microsecond, and nanosecond.
-     * @param duration
+     * @param duration long
      */
     public static void timePrint(long duration){
         long second = duration / 1000000000;
@@ -101,9 +101,9 @@ public class SortingAlgorithms {
 
     /**
      * randomIntArray()
-     * This method generates a random int array.
-     * @param userInput
-     * @return
+     * This method generates a random int array, the parameter is int.
+     * @param userInput int
+     * @return int[]
      */
     public static int[] randomIntArray(int userInput){
         // creating a random array
@@ -118,21 +118,22 @@ public class SortingAlgorithms {
 
     /**
      * selectionSort()
-     * This is the selection sort algorithm
-     * @param array
+     * This is the selection sort algorithm, the parameter is int[].
+     * @param array int[]
      */
     public static void selectionSort(int[] array){
         // first pointer
-        for(int i = 0; i < array.length; i++){
+        for(int pointer1 = 0; pointer1 < array.length; pointer1++){
             // temp int var for switching purposes
             int temp = 0;
             //second pointer
-            for(int j = i + 1; j < array.length; j++){
+            for(int pointer2 = pointer1 + 1; pointer2 < array.length; pointer2++){
                 // switching the ints
-                if (array[j] < array[i]){
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
+                if (array[pointer2] < array[pointer1]){
+                    //swapping variables
+                    temp = array[pointer1];
+                    array[pointer1] = array[pointer2];
+                    array[pointer2] = temp;
                 }//if
             }//for
         }//for
@@ -140,18 +141,19 @@ public class SortingAlgorithms {
 
     /**
      * insertionSort()
-     * This is the insertion sort algorithm
-     * @param array
+     * This is the insertion sort algorithm.
+     * @param array int[]
      */
     public static void insertionSort(int[] array){
-        for(int i = 0; i < array.length; i++){
-            int j = i;
-            while ((j > 0) && (array[j - 1] > array[j])){
+        //first pointer
+        for(int pointer1 = 0; pointer1 < array.length; pointer1++){
+            int pointer2 = pointer1;
+            while ((pointer2 > 0) && (array[pointer2 - 1] > array[pointer2])){
                 int temp = 0;
-                temp = array[j - 1];
-                array[j - 1] = array[j];
-                array[j] = temp;
-                j--;
+                temp = array[pointer2 - 1];
+                array[pointer2 - 1] = array[pointer2];
+                array[pointer2] = temp;
+                pointer2--;
             }//while
         }//for
 
@@ -159,8 +161,8 @@ public class SortingAlgorithms {
 
     /**
      * shellSort()
-     * This is the shell sort algorithm
-     * @param array
+     * This is the shell sort algorithm, the parameters is int[].
+     * @param array int[]
      */
     public static void shellSort(int[] array){
         //step
@@ -180,10 +182,10 @@ public class SortingAlgorithms {
 
     /**
      * quickSort()
-     * This is the quick sort algorithm.
-     * @param array
-     * @param low
-     * @param high
+     * This is the quick sort algorithm, the parameters are int[], int, int.
+     * @param array int[]
+     * @param low int
+     * @param high int
      */
     public static void quickSort(int[] array, int low, int high ){
         if (low < high) {
@@ -197,9 +199,9 @@ public class SortingAlgorithms {
     /**
      * quickSortHelper()
      * This static method is a helper for quickSort.
-     * @param array
-     * @param low
-     * @param high
+     * @param array int[]
+     * @param low int
+     * @param high int
      * @return
      */
     public static int quickSortHelper(int[] array, int low, int high) {
@@ -225,9 +227,9 @@ public class SortingAlgorithms {
     /**
      * mergeSort()
      * This is the merge sort algorithm.
-     * @param array
-     * @param left
-     * @param right
+     * @param array int[]
+     * @param left int
+     * @param right int
      */
     public static void mergeSort(int[] array, int left, int right){
         if (left < right) {
@@ -241,10 +243,10 @@ public class SortingAlgorithms {
     /**
      * mergeSortHelper()
      * This static method is the helper for mergeSort
-     * @param array
-     * @param left
-     * @param middle
-     * @param right
+     * @param array int[]
+     * @param left int
+     * @param middle int
+     * @param right int
      */
     public static void mergeSortHelper(int[] array, int left, int middle, int right){
         int pivot = middle - left + 1;
