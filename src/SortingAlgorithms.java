@@ -124,7 +124,7 @@ public class SortingAlgorithms {
         // first pointer
         for(int pointer1 = 0; pointer1 < array.length; pointer1++){
             // temp int var for switching purposes
-            int temp = 0;
+            int temp;
             //second pointer
             for(int pointer2 = pointer1 + 1; pointer2 < array.length; pointer2++){
 
