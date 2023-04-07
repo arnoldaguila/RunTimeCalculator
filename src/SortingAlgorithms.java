@@ -12,7 +12,7 @@ public class SortingAlgorithms {
 
         sortingPrint(randomIntArray);
 
-    }//main
+    }//main()
 
     /**
      * sortingPrint()
@@ -80,8 +80,7 @@ public class SortingAlgorithms {
         System.out.println("Merge Sort's Run Time: ");
         timePrint(duration);
 
-
-    }
+    }//sortingPrint()
 
     /**
      * timePrint()
@@ -114,7 +113,7 @@ public class SortingAlgorithms {
         }//for
 
         return randomArray;
-    }//randomIntArray
+    }//randomIntArray()
 
     /**
      * selectionSort()
@@ -128,16 +127,20 @@ public class SortingAlgorithms {
             int temp = 0;
             //second pointer
             for(int pointer2 = pointer1 + 1; pointer2 < array.length; pointer2++){
-                // switching the ints
+
+                //searching for the smallest element in the list
                 if (array[pointer2] < array[pointer1]){
                     //swapping variables
                     temp = array[pointer1];
                     array[pointer1] = array[pointer2];
                     array[pointer2] = temp;
                 }//if
+
             }//for
+
         }//for
-    }//selectionSort
+
+    }//selectionSort()
 
     /**
      * insertionSort()
@@ -149,15 +152,19 @@ public class SortingAlgorithms {
         for(int pointer1 = 0; pointer1 < array.length; pointer1++){
             int pointer2 = pointer1;
             while ((pointer2 > 0) && (array[pointer2 - 1] > array[pointer2])){
-                int temp = 0;
+
+                //temp for swapping elements
+                int temp;
+                //swapping elements
                 temp = array[pointer2 - 1];
                 array[pointer2 - 1] = array[pointer2];
                 array[pointer2] = temp;
+
                 pointer2--;
             }//while
         }//for
 
-    }//insertionSort
+    }//insertionSort()
 
     /**
      * shellSort()
@@ -202,7 +209,7 @@ public class SortingAlgorithms {
      * @param array int[]
      * @param low int
      * @param high int
-     * @return
+     * @return int
      */
     public static int quickSortHelper(int[] array, int low, int high) {
         int temp;
@@ -222,7 +229,7 @@ public class SortingAlgorithms {
         array[high] = temp;
         return (i + 1);
 
-    }//helper()
+    }//quickSortHelper()
 
     /**
      * mergeSort()
@@ -253,35 +260,45 @@ public class SortingAlgorithms {
         int pivot2 = right - middle;
         int[] leftArray = new int[pivot];
         int[] rightArray = new int[pivot2];
-        for (int i = 0; i < pivot; ++i)
+
+        for (int i = 0; i < pivot; ++i){
             leftArray[i] = array[left + i];
-        for (int j = 0; j < pivot2; ++j)
+        }//for
+
+        for (int j = 0; j < pivot2; ++j) {
             rightArray[j] = array[middle + 1 + j];
+        }//for
 
         int i = 0;
         int j = 0;
         int k = left;
         while (i < pivot && j < pivot2) {
+
             if (leftArray[i] <= rightArray[j]) {
                 array[k] = leftArray[i];
                 i++;
             }//if
+
             else {
                 array[k] = rightArray[j];
                 j++;
             }//else
+
             k++;
         }//while
+
         while (i < pivot) {
             array[k] = leftArray[i];
             i++;
             k++;
         }//while
+
         while (j < pivot2) {
             array[k] = rightArray[j];
             j++;
             k++;
         }//while
+
     }//mergeSortHelper()
 
 }//SortingAlgorithms()
